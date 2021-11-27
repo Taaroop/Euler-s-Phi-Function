@@ -18,15 +18,15 @@ def phi(num):
             count += 1
     return count
 
-def graph(start, end, m):
+def graph(start, end, scale):
     turtle.speed(0)
     for k in range(start, end+1):
         turtle.penup()
         turtle.goto(-770, -400)
         turtle.setheading(0)
-        turtle.forward(k*m)
+        turtle.forward(k*scale)
         turtle.left(90)
-        turtle.forward(phi(k)*m)
+        turtle.forward(phi(k)*scale)
         turtle.dot()
 
 graph(1, 100000, 2)

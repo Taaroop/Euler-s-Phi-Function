@@ -27,6 +27,20 @@ def graph(start, end, scale):
         turtle.forward(k*scale)
         turtle.left(90)
         turtle.forward(phi(k)*scale)
-        turtle.dot()
-
+        # Helps to recognise phi of primes in blue, even (except 2) with green, and odd composites with black)
+        if phi(k) == k-1:
+            turtle.dot(dot_size, "blue")
+        elif k % 2 == 0:
+            turtle.dot(dot_size, "green")
+        else:
+            turtle.dot(dot_size, "black")
+        
+        # Analysis
+        # It can be seen that the blue (primes) form a straight line on top.
+        # This is because phi(prime) = prime - 1. This is the maximum phi function output for any natural number.
+        # Also, the black (odd composites) are on top of the green (even numbers).
+        # This is because for an even numeber, all the even numbers before it will at least share a factor of 2 with that number. So, half of the numbers cannot be counted in the phi function.
+        # From the rest of the numbers, some will be selected, and some will be not. On the other hand, for the odd numbers, the half of the numbers less than that don't necessarily share any factors with that number.
+       
+        
 graph(1, 100000, 2)

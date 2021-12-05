@@ -18,7 +18,7 @@ def phi(num):
             count += 1
     return count
 
-def graph(start, end, scale):
+def graph(start, end, scale, dot_size):
     turtle.speed(0)
     for k in range(start, end+1):
         turtle.penup()
